@@ -1,9 +1,9 @@
 pipeline {
   agent any
 
-  triggers {
-        cron '00 21 * * 1-5' // Runs at 21:00 on every day-of-week from Monday through Friday
-    }
+  // triggers {
+  //       cron '00 21 * * 1-5' // Runs at 21:00 on every day-of-week from Monday through Friday
+  //   }
 
   environment {
     PYTHON_DIR = "${env.WORKSPACE}/python"  // Use the same Python path as first pipeline
