@@ -89,11 +89,21 @@ pipeline {
       }
     }
   }
+  stage('Security Scan') {
+            steps {
+                registerSecurityScan(
+                    // Security Scan to include
+                    artifacts: "njsscan-output.sarif",
+                    format: "sarif",
+                    archive: true
+                )
+            }
+        }
 
-  post {
-    always {
-      archiveArtifacts artifacts: "njsscan-output.sarif", fingerprint: true
-    }
-  }
+  // post {
+  //   always {
+  //     archiveArtifacts artifacts: "njsscan-output.sarif", fingerprint: true
+  //   }
+  // }
 }
  
