@@ -88,8 +88,7 @@ pipeline {
         '''
       }
     }
-  }
-  stage('Security Scan') {
+    stage('Security Scan') {
             steps {
                 registerSecurityScan(
                     // Security Scan to include
@@ -99,6 +98,9 @@ pipeline {
                 )
             }
         }
+  }
+  
+  
 
   // post {
   //   always {
